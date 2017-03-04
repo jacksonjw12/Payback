@@ -98,6 +98,18 @@ var insertDocument = function(db, callback) {
   });
 };
 
+var findPayback = function(db, callback) {
+   var cursor =db.collection('payback').find( );
+   cursor.each(function(err, doc) {
+      assert.equal(err, null);
+      if (doc != null) {
+         console.dir(doc);
+      } else {
+         callback();
+      }
+   });
+};
+
 MongoClient.connect(url, function(err, db) {	
   assert.equal(null, err);
 	db.createCollection("testCollection", function(err, collection){
@@ -109,4 +121,7 @@ MongoClient.connect(url, function(err, db) {
 	insertDocument(db, function() {
       db.close();
   	});
+  	findPayback(db, function() {
+      db.close();
+  });
 });  
