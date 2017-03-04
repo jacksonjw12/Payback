@@ -40,25 +40,18 @@ function start() {
 	
 
 	var server = app.listen(port);
-	
-	
-	
+
 	console.log("Server has started on port " + port);
 }
 
-var MongoClient = require('mongodb').MongoClient
-    , format = require('util').format;
-
-MongoClient.connect('mongodb://localhost:8888', function(err, db) {
-    if(err) throw err;
-
-    var collection = db.collection('payback_database');
-    collection.insert({a:2}, function(err, docs) {
-        collection.count(function(err, count) {
-            console.log(format("count = %s", count));
-            db.close();
-        });
-    });
-});
-
 exports.start = start;
+
+var MongoClient = require('mongodb').MongoClient;
+var assert = require('assert');
+	
+var url = 'mongodb://jacksonwheelers.space';
+	MongoClient.connect(url, function(err, db) {
+	assert.equal(null, err);
+  	console.log("Connected correctly to server.");
+  	db.close();
+});
