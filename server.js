@@ -6,8 +6,7 @@ function start() {
 	var express = require('express');
 	app = express();
 	var bodyParser = require('body-parser')
-	
-	
+	var mongodb
 	
 
 	app.use(express.static(__dirname + '/statics'));
@@ -58,10 +57,18 @@ function start() {
 	
 
 	var server = app.listen(port);
-	
 
-	
 	console.log("Server has started on port " + port);
 }
 
 exports.start = start;
+
+var MongoClient = require('mongodb').MongoClient;
+var assert = require('assert');
+	
+var url = 'mongodb://jacksonwheelers.space';
+	MongoClient.connect(url, function(err, db) {
+	assert.equal(null, err);
+  	console.log("Connected correctly to server.");
+  	db.close();
+});
