@@ -3,6 +3,13 @@
 	font-family: 'Raleway', sans-serif;
 }
 
+
+#header p {
+	font-size: 14px;
+}
+
+
+
 #header {
 	/*background-color: #f9f9f9;*/
 	/*background-image: url(media/bernie.jpg);*/
@@ -12,7 +19,37 @@
 	position: fixed;
 	width: 100%;
 	z-index: 99;
+  	transition: all .7s cubic-bezier(0.42,0,0.58,1);
+  	overflow-y:hidden;
+
+	/*250 px is default height*/
 }
+
+#headerExpandedContent {
+}
+.hidden {
+	display:none;
+}
+
+.clickable {
+	color:white;
+    cursor:pointer;
+}
+
+.headerClosed {
+	height:250px;
+}
+
+.headerOpen {
+	height:400px;	
+	
+}
+.headerMinimized {
+	height:150px;
+	margin-top:-30px;
+}
+
+
 
 .gradient {
 	background: #4080a0;
@@ -24,6 +61,7 @@
 
 #invisible_header {
 	z-index: -99;
+	transition: height .7s cubic-bezier(0.42,0,0.58,1);
 }
 
 .jumbotron h1 u {
@@ -37,7 +75,7 @@
 .entry {
 	background-color: #f9f9f9;
 	border: solid 1px #eeeeee;
-	box-shadow: 5px 5px 5px #888888;
+	/*box-shadow: 5px 5px 5px #888888;*/
 	margin-bottom: 20px;
 	border-radius: 5px;
 }
