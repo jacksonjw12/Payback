@@ -62,6 +62,7 @@
 #invisible_header {
 	z-index: -99;
 	transition: height .7s cubic-bezier(0.42,0,0.58,1);
+	background-color:white;
 }
 
 .jumbotron h1 u {
