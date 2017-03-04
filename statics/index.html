@@ -10,20 +10,34 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+	<script src="js/index.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
-<body>
+<body onscroll="javascript:scrolled()">
 
-	<div id="header" class="jumbotron gradient text-center">
+	<div id="header" class="jumbotron gradient text-center headerClosed">
 		<h1><u>Payback</u></h1>
 		<h2>Use Your Anger For Good</h2>
+		<h3 id="headerExpandButton" class="clickable" onclick="javascript:headerExpandChange()">V Learn More V</h3>
+		<div id="headerExpandedContent" >
+			</br>
+
+			<p>Payback lets you use your frustration about world events to enact change.</p>
+			<p> We'll direct you to the foundations that are making a difference based on the day's current events and the causes near to your heart.</p>
+			<p> We make the good stuff here bruh, just tell jjwheel dog what you wanna donate to and i gotcha. cash me outside howbowdah</p>
+
+		</div>
 	</div>
 
-	<div id="invisibe_header" class="jumbotron">
+	<div id="invisible_header" class="jumbotron headerClosed">
 		<h1>Title</h1>
 		<h2>Subtitle</h2>
+		<h3 id="headerExpandButton" class="clickable" "> Learn More </h3>
+		<div id="headerExpandedContent" class="hidden">
+			<p>Payback lets you use your frustration about world events to enact change.</p>
+			<p> We'll direct you to the foundations that are making a difference based on the day's current events and the causes near to your heart.</p>
+		</div>
 	</div>
 
 	<div id="spacer" class="col-md-2"></div>
