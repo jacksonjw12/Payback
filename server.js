@@ -46,12 +46,19 @@ function start() {
 	console.log("Server has started on port " + port);
 }
 
-var MongoClient = require('mongodb').MongoClient, format = require('util').format;
+var MongoClient = require('mongodb').MongoClient
+    , format = require('util').format;
 
-MongoClient.connect('mongodb://localhost:8888',fuction(err, db) {
+MongoClient.connect('mongodb://localhost:8888', function(err, db) {
     if(err) throw err;
 
-    var collection = db.collection('payback');
+    var collection = db.collection('payback_database');
+    collection.insert({a:2}, function(err, docs) {
+        collection.count(function(err, count) {
+            console.log(format("count = %s", count));
+            db.close();
+        });
+    });
 });
 
 exports.start = start;
