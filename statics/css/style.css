@@ -1,11 +1,36 @@
 * {
-	border: solid 1px black;
+	/*border: solid 1px black;*/
+}
+
+#header {
+	/*background-color: #f9f9f9;*/
+	background-image: url(media/happy.jpg);
+	border-bottom: solid 1px #eeeeee;
+	box-shadow: 5px 5px 5px #888888;
+	position: fixed;
+	width: 100%;
+	z-index: 99;
+}
+
+#invisible_header {
+	z-index: -99;
 }
 
 .jumbotron h1 {
-	color: red;
+	/*color: red;*/
 }
 
 .entry {
-	text-align: center;
+	background-color: #f9f9f9;
+	border: solid 1px #eeeeee;
+	box-shadow: 5px 5px 5px #888888;
+	margin-bottom: 20px;
 }
+
+/*.source {
+	background-color: blue;
+}
+
+.donation {
+	background-color: red;
+}*/
