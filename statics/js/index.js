@@ -18,35 +18,41 @@ var headerExpandChange = function(){
 
 $(document).on("scroll", function(){
 	if($(document).scrollTop() > 100){
+		
+
 		if($('#header').hasClass('headerOpen')){
 			$("#header" ).toggleClass("headerOpen");	
 			$( "#invisible_header" ).toggleClass("headerOpen");	
 
-			$("#headerExpandedContent").toggleClass("hidden")
 
+		
 		}
+		if(!$('#header').hasClass('headerMinimized')){
+			$("#header" ).toggleClass("headerMinimized");	
+			$( "#invisible_header" ).toggleClass("headerMinimized");	
+
+		
+		}
+		
+
 	}
-	else{
+	else if($(document).scrollTop() == 0){
+		if($('#header').hasClass('headerMinimized')){
+			$("#header" ).toggleClass("headerMinimized");	
+			$( "#invisible_header" ).toggleClass("headerMinimized");	
+		
+		}
+		if(!$('#header').hasClass('headerClosed')){
+			$( "#header" ).toggleClass("headerClosed");	
+
+			$( "#invisible_header" ).toggleClass("headerClosed");	
+		
+		}
+		
+
 		
 	}
 });
 
 
 
-var scrolled = function(){
-	if(document.body.scrollTop != 0){
-		if($('#header').hasClass('headerOpen')){
-			//$("#header" ).toggleClass("headerOpen");	
-			//$( "#invisible_header" ).toggleClass("headerOpen");	
-
-			//$("#headerExpandedContent").toggleClass("hidden")
-		}
-
-		
-		
-
-
-
-		
-	}
-}
