@@ -1,15 +1,88 @@
-<html>
+<!DOCTYPE html>
+
+<html lang="en">
 <head>
-	
-	
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<title>Payback - Homepage</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Diplomata+SC|Raleway" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/addDiv.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
-<div id="divs">
-<div class="contentPlainText" style="display:inline-block;">
+<body >
 
+	<div id="header" class="jumbotron gradient text-center headerClosed">
+		<h1><u>Payback</u></h1>
+		<h2>Use Your Anger For Good</h2>
+		<h3 id="headerExpandButton" class="clickable" onclick="javascript:headerExpandChange()">V Learn More V</h3>
+		<div id="headerExpandedContent" >
+			</br>
 
-</div>
+			<p>Payback lets you use your frustration about world events to enact change.</p>
+			<p> We'll direct you to the foundations that are making a difference based on the day's current events and the causes near to your heart.</p>
+			<p> We make the good stuff here bruh, just tell jjwheel dog what you wanna donate to and i gotcha. cash me outside howbowdah</p>
 
+		</div>
+	</div>
 
-</body>
-</html>
+	<div id="invisible_header" class="jumbotron headerClosed">
+		<h1 class="hidden">Title</h1>
+		<h2 class="hidden">Subtitle</h2>
+		<h3 id="headerExpandButton" class="clickable" "> Learn More </h3>
+		<div id="headerExpandedContent" class="hidden">
+			<p>Payback lets you use your frustration about world events to enact change.</p>
+			<p> We'll direct you to the foundations that are making a difference based on the day's current events and the causes near to your heart.</p>
+		</div>
+	</div>
+
+	<div id="spacer" class="col-md-2"></div>
+
+	<div id="content" class="col-md-8 container">
+		<div class="col-sm-12 entry">
+			<div class="col-md-8 source">
+				<h3>ENTRY 1</h3>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+			</div>
+			<div class="col-md-4 donation text-center">
+				<h4>Eggplant Industries, Ltd.</h4>
+				<img src="css/media/eggplant.png">
+				<button type="button" class="btn btn-default">Donate Here</button>
+			</div>
+		</div>
+
+		<div class="col-sm-12 entry">
+			<div class="col-md-8 source">
+				<h3>ENTRY 2</h3>
+				<p>Content</p>
+			</div>
+			<div class="col-md-4 donation text-center">
+				<h3>Donate Here</h3>
+				<p><a href="http://www.irs.gov/pub/irs-pdf/fw9.pdf" target="_blank">Sample Text</a></p>
+			</div>
+		</div>
+
+		
+
+	</div>
+	<div class="col-sm-12 text-center">
+		<button onclick="addDiv();" type="button" class="btn btn-default">Add</button>
+	</div>
+
+	<div id="spacer" class="col-md-2"></div>
+
+	<div id="footer" class="col-md-12 text-center">
+		<h4>Created by:</h4>
+		<p>Adam Miller</p>
+		<p>Jackson Wheeler</p>
+		<p>Ryan Cain</p>
+		<p>Anand</p>
+	</div>
+
+</body></html>

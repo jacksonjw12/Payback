@@ -1,0 +1,104 @@
+* {
+	/*border: solid 1px black;*/
+	font-family: 'Raleway', sans-serif;
+}
+
+
+#header p {
+	font-size: 14px;
+}
+
+
+
+#header {
+	/*background-color: #f9f9f9;*/
+	/*background-image: url(media/bernie.jpg);*/
+	background-position: center;
+	background-size: cover;
+	border-bottom: solid 1px #eeeeee;
+	position: fixed;
+	width: 100%;
+	z-index: 99;
+  	transition: all .7s cubic-bezier(0.42,0,0.58,1);
+  	overflow-y:hidden;
+
+	/*250 px is default height*/
+}
+
+#headerExpandedContent {
+}
+.hidden {
+	display:none;
+}
+
+.clickable {
+	color:white;
+    cursor:pointer;
+}
+
+.headerClosed {
+	height:250px;
+}
+
+.headerOpen {
+	height:400px;	
+	
+}
+.headerMinimized {
+	height:150px;
+	margin-top:-30px;
+}
+
+
+
+.gradient {
+	background: #4080a0;
+	background: -webkit-linear-gradient(left top, #4080a0, #d4eefc);
+	background: -o-linear-gradient(bottom right, #4080a0, #d4eefc);
+	background: -moz-linear-gradient(bottom right, #4080a0, #d4eefc);
+	background: linear-gradient(to bottom right, #4080a0, #d4eefc);
+}
+
+#invisible_header {
+	z-index: -99;
+	transition: height .7s cubic-bezier(0.42,0,0.58,1);
+	background-color:white;
+}
+
+.jumbotron h1 u {
+	font-family: 'Diplomata SC', cursive;
+}
+
+.jumbotron h1 u, .jumbotron h2 {
+	color: #ffffff;
+}
+
+.entry {
+	background-color: #f9f9f9;
+	border: solid 1px #eeeeee;
+	/*box-shadow: 5px 5px 5px #888888;*/
+	margin-bottom: 20px;
+	border-radius: 5px;
+}
+
+/*.source {
+	background-color: blue;
+}
+
+.donation {
+	background-color: red;
+}*/
+
+.donation img {
+	width: 100%;
+}
+
+.btn-default {
+	background-color: #4080a0;
+	color: #ffffff;
+	margin-bottom: 10px;
+}
+
+#footer {
+	border-top: solid 1px #eeeeee;
+}
