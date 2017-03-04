@@ -50,7 +50,7 @@ var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 var url = 'mongodb://payback:casa@jacksonwheelers.space/payback?authSource=admin';
 
-/*var insertDocument = function(db, callback) {
+var insertDocument = function(db, callback) {
    db.collection('payback').insertOne( {
       "address" : {
          "street" : "2 Avenue",
@@ -80,7 +80,7 @@ var url = 'mongodb://payback:casa@jacksonwheelers.space/payback?authSource=admin
     callback();
   });
 };
-*/
+
 MongoClient.connect(url, function(err, db) {	
   assert.equal(null, err);
 	db.createCollection("testCollection", function(err, collection){
@@ -89,8 +89,7 @@ MongoClient.connect(url, function(err, db) {
 	   	console.log("Created testCollection");
 	 		console.log(collection);
 	});
-});  
-/*  insertDocument(db, function() {
+	insertDocument(db, function() {
       db.close();
-  });
-};
+  	});
+});  
