@@ -6,8 +6,7 @@ function start() {
 	var express = require('express');
 	app = express();
 	var bodyParser = require('body-parser')
-	
-	
+	var mongodb
 	
 
 	app.use(express.static(__dirname + '/statics'));
@@ -42,9 +41,17 @@ function start() {
 
 	var server = app.listen(port);
 	
-
+	
 	
 	console.log("Server has started on port " + port);
 }
+
+var MongoClient = require('mongodb').MongoClient, format = require('util').format;
+
+MongoClient.connect('mongodb://localhost:8888',fuction(err, db) {
+    if(err) throw err;
+
+    var collection = db.collection('payback');
+});
 
 exports.start = start;
