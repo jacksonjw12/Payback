@@ -1,0 +1,11 @@
+* {
+	border: solid 1px black;
+}
+
+.jumbotron h1 {
+	color: red;
+}
+
+.entry {
+	text-align: center;
+}
