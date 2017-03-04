@@ -38,15 +38,13 @@ function start() {
 	})
 	
 	var port = 8888;
-	if(process.platform == "linux"){
-		port = 8888
-	}
+	
 
 	var server = app.listen(port);
 	
 
 	
-	console.log("Server has started");
+	console.log("Server has started on port " + port);
 }
 
 exports.start = start;
