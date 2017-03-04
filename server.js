@@ -14,7 +14,23 @@ function start() {
 	app.get('/', function (req, res) {
 		res.sendFile(__dirname + '/statics/index.html')
 	});
-	app.get('/aboutMe', function (req, res) {
+	app.get('/getData',function(req,res){
+
+		res.send({"hello":"world"})
+
+	})
+	app.get('/getDisplay',function(req,res){
+		var n = Math.floor(2*Math.random());
+		if(n == 0){
+			res.send({"value":false})
+		}
+		else{
+			res.send({"value":true})	
+		}
+
+	})
+
+	/*app.get('/aboutMe', function (req, res) {
 		res.sendFile(__dirname + '/statics/aboutMe.html')
 	});
 
@@ -34,7 +50,8 @@ function start() {
 
 
 		
-	})
+	})*/
+
 	
 	var port = 8888;
 	
