@@ -100,14 +100,19 @@ var insertDocument = function(db, callback) {
 
 var findPayback = function(db, callback) {
    var cursor =db.collection('payback').find( );
+   var objs = [];
+
    cursor.each(function(err, doc) {
       assert.equal(err, null);
       if (doc != null) {
-         console.dir(doc);
+      	objs.push(doc)
+         console.log(doc);
       } else {
-         callback();
+         console.log("doc is null")
       }
+
    });
+   callback(objs)
 };
 
 MongoClient.connect(url, function(err, db) {	
