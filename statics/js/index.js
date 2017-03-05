@@ -3,8 +3,7 @@ var sortStyle;
 
 var populateItems = function(){
 	get('/testReadDB',{},function(data){
-		entries = data;
-		// sortData(data);
+		entries = sortData(data);
 
 
 		for(var i = 0; i < data.objs.length; i++){
@@ -39,9 +38,15 @@ var setSortStyle = function(a){
 	console.log(sortStyle);
 }
 
-// var sortData = function(data){
-// 	if()
-// }
+var sortData = function(data){
+	if(sortStyle == hot){
+		return data;
+		console.log('hot');
+	}else if(sortStyle == newest){
+		console.log('newest');
+	}
+
+}
 
 populateItems();
 
