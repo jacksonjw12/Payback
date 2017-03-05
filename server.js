@@ -148,7 +148,7 @@ var findPayback = function(db, callback) {
 var testDocument =  {
       "article" : {
          "type" : "plainText",
-          "name" : "eyyy",
+         "name" : "eyyy",
          "twitterID" :"0",
          "plainText" : "test",
          "link" : "http://www.jacksonwheelers.space"
@@ -179,3 +179,25 @@ MongoClient.connect(url, function(err, db) {
       db.close();
   });
 });  
+
+var updateUpvotes = function(db, callback) {
+   db.collection('payback').updateOne(
+      { "name" : "test" },
+      {
+        $inc: { 'upvotes': 1 }
+      }, function(err, results) {
+      console.log(results);
+      callback();
+   });
+};
+
+var updateClicks = function(db, callback) {
+   db.collection('payback').updateOne(
+      { "name" : "test" },
+      {
+        $inc: { 'clicks': 1 }
+      }, function(err, results) {
+      console.log(results);
+      callback();
+   });
+};
