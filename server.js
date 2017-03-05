@@ -114,22 +114,29 @@ function start() {
 		res.send({})
 	});
 
-	/*app.get('/tempFixDates',function(req,res){
+	app.get('/tempFixDates',function(req,res){
 		MongoClient.connect(url, function(err, db) {	
 		 	// db.payback.update({}, {$set: {"date": new Date()}}, false, true)
 			
-		  	db.collection('payback').update(
-				{ },
-				{
-					$set: { "date": new Date() }
-				}, function(err, results) {
-				//console.log(results);
-			});
+			var cursor =db.collection('payback').find( );
+			
+
+			cursor.each(function(err, doc) {
+				assert.equal(err, null);
+				if (doc != null) {
+					doc.date = new Date();
+					db.collection('payback').save(doc)
+					//console.log(doc);
+				} else {
+					console.log("doc is done")
+	     		 }
+
+	  		});
 
 		});  
 		res.send({})
 			
-	})*/
+	})
 
 
 	/*app.get('/aboutMe', function (req, res) {
