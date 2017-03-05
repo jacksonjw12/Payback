@@ -11,9 +11,25 @@ var populateItems = function(){
 				
 			}
 			else if(data.objs[i].article.type == "twitter"){
-				var newEntry = '<div class="col-sm-12 entry"><div class="col-md-8 source"><h3>' + data.objs[i].article.name + '</h3><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="' + data.objs[i].article.twitterID + '"></a></blockquote></div><div class="col-md-4 donation text-center"><h4>' + data.objs[i].charity.name + '</h4><img src="' + data.objs[i].charity.picture + '"><a href="' + data.objs[i].charity.link + '" class="btn btn-default" role="button">Donate Here</a></div></div>';
 				//newEntry = '<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="' + data.objs[i].article.twitterID + '"></a></blockquote>'
-				get('https://api.twitter.com/1.1/statuses/oembed.json?id=262584296081068033',{}, function(data){console.log(data)})
+				//get('https://api.twitter.com/1.1/statuses/oembed.json?id=262584296081068033',{}, function(data){console.log(data)})
+				var newEntryA = '<div class="col-sm-12 entry"><div class="col-md-8 source"><h3>' + data.objs[i].article.name + '</h3> ';
+				var newEntryB = '</div><div class="col-md-4 donation text-center"><h4>' + data.objs[i].charity.name + '</h4><img src="' + data.objs[i].charity.picture + '"><a href="' + data.objs[i].charity.link + '" class="btn btn-default" role="button">Donate Here</a></div></div>';
+				
+				//console.log(data);
+				// $('#content').append(data.html);
+
+				var newEntry = newEntryA + "<div id='"+i+data.objs[i].article.twitterID+"'></div>" + newEntryB;
+
+				$('#content').append(newEntry);
+
+				twttr.widgets.createTweet(
+				  data.objs[i].article.twitterID,
+				  document.getElementById( i+data.objs[i].article.twitterID),
+				  {}
+				  
+				);
+				
 
 			}	
 
@@ -35,6 +51,15 @@ populateItems();
 
 
 
+function getTweet(link, callback){
+	$.ajax({
+		url: "https://publish.twitter.com/oembed?url="+link,
+		type: "GET",
+		dataType: "jsonp",
+		contentType: "application/json",
+		success: function(data){callback(data)}
+	});
+}
 
 function get(domain, obj, callback) {
 	$.ajax({
@@ -80,6 +105,7 @@ $(document).on("scroll", function(){
 		if($('#header').hasClass('headerOpen')){
 			$("#header" ).toggleClass("headerOpen");	
 			$( "#invisible_header" ).toggleClass("headerOpen");	
+			$("#headerExpandButton").text("Learn More >")
 
 
 		
