@@ -32,10 +32,10 @@ function start() {
 	app.get('/getDisplay',function(req,res){
 		var n = Math.floor(2*Math.random());
 		if(n == 0){
-			res.send("ANAND::false")
+			res.send({"value":false})
 		}
 		else{
-			res.send("ANAND::true")	
+			res.send({"value":true})	
 		}
 
 	})
