@@ -1,6 +1,7 @@
 var testDocument =  {
       "article" : {
          "type" : "plainText",
+          "name" : "eyyy",
          "twitterID" :"0",
          "plainText" : "test",
          "link" : "http://www.jacksonwheelers.space"
@@ -16,6 +17,7 @@ var testDocument =  {
 var newEntry_json = {
       "article" : {
          "type" : "plainText",
+         "name" : "eyyy",
          "twitterID" : "0",
          "plainText" : "This is some filler text concerning a donation page.",
          "link" : "http://www.google.com/"
