@@ -55,15 +55,6 @@ function start() {
 		
 	});
 
-	app.get('/newClick',function(req,res){
-
-	})
-
-	app.get('/newUpvote',function(req,res){
-
-	})
-
-
 
 
 	app.post('/addDocument',function(req,res){
@@ -198,7 +189,7 @@ var updateUpvotes = function(db, callback) {
       console.log(results);
       callback();
    });
-}
+};
 
 var updateClicks = function(db, callback) {
    db.collection('payback').updateOne(
@@ -209,7 +200,7 @@ var updateClicks = function(db, callback) {
       console.log(results);
       callback();
    });
-}
+};
 
 var removePayback = function(db, callback) {
    db.collection('payback').deleteMany(
@@ -218,5 +209,5 @@ var removePayback = function(db, callback) {
          console.log(results);
          callback();
       }
-   )
-}
+   );
+};

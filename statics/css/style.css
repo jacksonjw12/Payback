@@ -16,15 +16,7 @@
   	transition: all .7s cubic-bezier(0.42,0,0.58,1);
   	overflow-y:hidden;
   	animation: fadeInLeft 1s;
-  	margin-bottom: 5px;
 	/*250 px is default height*/
-}
-
-#invisible_header {
-	z-index: -99;
-	transition: height .7s cubic-bezier(0.42,0,0.58,1);
-	background-color: white;
-	margin-bottom: 5px;
 }
 
 #headerExpandedContent {
@@ -59,17 +51,18 @@
 	margin-bottom: 20px;
 }
 
-.sorter {
-	animation: fadeInLeft 1s;
-	padding:10px;
-}
-
 .gradient {
 	background: #4080a0;
 	background: -webkit-linear-gradient(left top, #4080a0, #d4eefc);
 	background: -o-linear-gradient(bottom right, #4080a0, #d4eefc);
 	background: -moz-linear-gradient(bottom right, #4080a0, #d4eefc);
 	background: linear-gradient(to bottom right, #4080a0, #d4eefc);
+}
+
+#invisible_header {
+	z-index: -99;
+	transition: height .7s cubic-bezier(0.42,0,0.58,1);
+	background-color:white;
 }
 
 .jumbotron h1 u {
@@ -80,16 +73,6 @@
 	color: #ffffff;
 }
 
-#nav p {
-	display: inline;
-}
-
-#nav .btn {
-	margin-top: 10px;
-	border-top-left-radius: 3px;
-	border-bottom-left-radius: 3px;
-}
-
 .entry {
 	background-color: #f9f9f9;
 	border: solid 1px #eeeeee;
@@ -98,11 +81,11 @@
 	border-radius: 5px;
 }
 
-#div1 {
+#first {
 	animation: bounceInUp 1s;
 }
 
-#div2 {
+#second {
 	animation: bounceInUp 1s;
 	animation-delay: 0.1s
 }
@@ -111,10 +94,10 @@
 	width: 100%;
 }
 
-.entry .btn-default {
-	margin: 10px;
+.btn-default {
 	background-color: #4080a0;
 	color: #ffffff;
+	margin-bottom: 10px;
 }
 
 #footer {

@@ -19,8 +19,8 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
-
-<body>
+<body >
+	
 	<div id="header" class="jumbotron gradient text-center headerClosed">
 		<h1><u>Payback</u></h1>
 		<h2>Use Your Anger For Good</h2>
@@ -44,21 +44,11 @@
 			<p> We'll direct you to the foundations that are making a difference based on the day's current events and the causes near to your heart.</p>
 		</div>
 	</div>
-	<div id="nav" class="col-md-12 text-center sorter">
-		<p>Sort by:</p>
-		<div class="btn-group">
-		    <select onchange="setSortStyle(this.value)" class="form-control" id="articleType">
-		    	<option value="hot">Hot</option>
-		    	<option value="newest">Newest</option>
-		    	<option value="oldest">Oldest</option>
-		    </select>
-		</div>
-	</div>
 
 	<div id="spacer" class="col-md-2"></div>
 
 	<div id="content" class="col-md-8 container">
-		<div class="col-sm-12 entry">
+		<div id="first" class="col-sm-12 entry">
 			<div class="col-md-8 source">
 				<h3>ENTRY 1</h3>
 				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
@@ -70,7 +60,7 @@
 			</div>
 		</div>
 
-		<div class="col-sm-12 entry">
+		<div id="second" class="col-sm-12 entry">
 			<div class="col-md-8 source">
 				<h3>ENTRY 1</h3>
 				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
@@ -81,8 +71,14 @@
 				<a href="#" class="btn btn-default" role="button">Donate Here</a>
 			</div>
 		</div>
+
+		
+
 	</div>
-	
+	<div class="col-sm-12 text-center">
+		<button type="button" class="btn btn-default">Add</button>
+	</div>
+
 	<div id="spacer" class="col-md-2"></div>
 
 	<div id="footer" class="col-md-12 text-center">
@@ -90,7 +86,7 @@
 		<p>Adam Miller</p>
 		<p>Jackson Wheeler</p>
 		<p>Ryan Cain</p>
-		<p>Anand Ra-Ra-Rasputin</p>
+		<p>Anand</p>
 	</div>
 
 </body>

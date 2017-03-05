@@ -1,41 +1,29 @@
-var entries = [];
-var sortStyle;
+
 
 var populateItems = function(){
 	get('/testReadDB',{},function(data){
 		entries = sortData(data);
-
-
 		for(var i = 0; i < data.objs.length; i++){
+			var temp = "Article Title";
 			if(data.objs[i].article.type == "plainText"){
-				var newEntry = '<div id="div' + (i+1) + '" class="col-sm-12 entry"><div class="col-md-8 source"><h3>' + data.objs[i].article.name + '</h3><p>' + data.objs[i].article.plainText + '</p></div><div class="col-md-4 donation text-center"><h4>' + data.objs[i].charity.name + '</h4><img src="' + data.objs[i].charity.picture + '"><a href="' + data.objs[i].charity.link + '" class="btn btn-default" role="button">Donate Here</a></div></div>';
+				var newEntry = '<div class="col-sm-12 entry"><div class="col-md-8 source"><h3>' + data.objs[i].article.name + '</h3><p>' + data.objs[i].article.plainText + '</p></div><div class="col-md-4 donation text-center"><h4>' + data.objs[i].charity.name + '</h4><img src="' + data.objs[i].charity.picture + '"><a href="' + data.objs[i].charity.link + '" class="btn btn-default" role="button">Donate Here</a></div></div>';
 				$('#content').append(newEntry);
-			}else if(data.objs[i].article.type == "twitter"){
-				//newEntry = '<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="' + data.objs[i].article.twitterID + '"></a></blockquote>'
-				//get('https://api.twitter.com/1.1/statuses/oembed.json?id=262584296081068033',{}, function(data){console.log(data)})
-				var newEntryA = '<div id="div' + (i+1) + '" class="col-sm-12 entry"><div class="col-md-8 source"><h3>' + data.objs[i].article.name + '</h3> ';
-				var newEntryB = '</div><div class="col-md-4 donation text-center"><h4>' + data.objs[i].charity.name + '</h4><img src="' + data.objs[i].charity.picture + '"><a href="' + data.objs[i].charity.link + '" class="btn btn-default" role="button">Donate Here</a></div></div>';
 				
-				//console.log(data);
-				// $('#content').append(data.html);
+			}
+			else if(data.objs[i].article.type == "twitter"){
+				var newEntry = '<div class="col-sm-12 entry"><div class="col-md-8 source"><h3>' + data.objs[i].article.name + '</h3><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="' + data.objs[i].article.twitterID + '"></a></blockquote></div><div class="col-md-4 donation text-center"><h4>' + data.objs[i].charity.name + '</h4><img src="' + data.objs[i].charity.picture + '"><a href="' + data.objs[i].charity.link + '" class="btn btn-default" role="button">Donate Here</a></div></div>';
+				//newEntry = '<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="' + data.objs[i].article.twitterID + '"></a></blockquote>'
+				get('https://api.twitter.com/1.1/statuses/oembed.json?id=262584296081068033',{}, function(data){console.log(data)})
 
-				var newEntry = newEntryA + "<div id='"+i+data.objs[i].article.twitterID+"'></div>" + newEntryB;
-
-				$('#content').append(newEntry);
-
-				twttr.widgets.createTweet(
-					data.objs[i].article.twitterID,
-					document.getElementById( i+data.objs[i].article.twitterID),
-					{}		  
-				);
 			}	
-		}
-	});
-}
 
-var setSortStyle = function(a){
-	sortStyle = a;
-	console.log(sortStyle);
+
+			
+
+		}
+
+	});
+
 }
 
 var sortData = function(data){
@@ -43,12 +31,16 @@ var sortData = function(data){
 		return data;
 		console.log('hot');
 	}else if(sortStyle == newest){
+		return data;
 		console.log('newest');
 	}
 
 }
 
 populateItems();
+
+
+
 
 function get(domain, obj, callback) {
 	$.ajax({
@@ -65,39 +57,67 @@ function get(domain, obj, callback) {
 	});
 }
 
+
+
+
 var headerExpandChange = function(){
+
+
 	$( "#header" ).toggleClass("headerOpen");	
 	$( "#header" ).toggleClass("headerClosed");	
+
 	if($("#headerExpandButton").html() == "Close"){
 		$("#headerExpandButton").text("Learn More >")
 	}
 	else{
 		$("#headerExpandButton").text("Close")
+
 	}
 	$( "#invisible_header" ).toggleClass("headerOpen");	
-	$( "#invisible_header" ).toggleClass("headerClosed");
+
+	$( "#invisible_header" ).toggleClass("headerClosed");	
+
 }
 
 $(document).on("scroll", function(){
 	if($(document).scrollTop() > 100){
+		
+
 		if($('#header').hasClass('headerOpen')){
 			$("#header" ).toggleClass("headerOpen");	
 			$( "#invisible_header" ).toggleClass("headerOpen");	
-			$("#headerExpandButton").text("Learn More >")
+
+
+		
 		}
 		if(!$('#header').hasClass('headerMinimized')){
 			$("#header" ).toggleClass("headerMinimized");	
-			$( "#invisible_header" ).toggleClass("headerMinimized");
+			$( "#invisible_header" ).toggleClass("headerMinimized");	
+
+		
 		}
+		
+
 	}
 	else if($(document).scrollTop() == 0){
 		if($('#header').hasClass('headerMinimized')){
 			$( "#invisible_header" ).toggleClass("headerMinimized");	
+		
 			$("#header" ).toggleClass("headerMinimized");	
+			
 		}
 		if(!$('#header').hasClass('headerClosed')){
 			$( "#invisible_header" ).toggleClass("headerClosed");	
-			$( "#header" ).toggleClass("headerClosed");
+			$( "#header" ).toggleClass("headerClosed");	
+
+			
+		
 		}
+		
+
+		
 	}
 });
+
+
+
