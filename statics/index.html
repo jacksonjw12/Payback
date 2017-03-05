@@ -47,22 +47,11 @@
 	<div id="nav" class="col-md-12 text-center sorter">
 		<p>Sort by:</p>
 		<div class="btn-group">
-			<!-- <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    Latest <span class="caret"></span>
-		    </button>
-		    <ul class="dropdown-menu">
-		    	<li><a href="#">Latest</a></li>
-    			<li><a href="#">Popular</a></li>
-		    </ul> -->
-
-		    <select class="form-control " id="articleType">
-		      <option>Hot</option>
-		      <option>Newest</option>
-		      <option>Oldest</option>
-		      
+		    <select onchange="setSortStyle(this.value)" class="form-control " id="articleType">
+		    	<option value="newest">Newest</option>
+		    	<option value="hot">Hot</option>
+		    	<option value="oldest">Oldest</option>
 		    </select>
-
-
 		</div>
 	</div>
 
