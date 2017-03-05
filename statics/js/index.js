@@ -9,13 +9,13 @@ var populateItems = function(){
 		for(var i = 0; i < data.objs.length; i++){
 			var temp = "Article Title";
 			if(data.objs[i].article.type == "plaintext"){
-				var newEntry = '<div id="div' + (i+1) + '" class="col-sm-12 entry"><div class="col-md-8 source"><h3>' + data.objs[i].article.name + '</h3><p>' + data.objs[i].article.plainText + '</p></div><div class="col-md-4 donation text-center"><h4>' + data.objs[i].charity.name + '</h4><img src="' + data.objs[i].charity.picture + '"><a href="javascript:linkClick(' +"'" +data.objs[i].charity.link +"'"+ ')" class="btn btn-default" role="button">Donate Here</a></div></div>';
+				var newEntry = '<div visibility="hidden" id="div' + (i+1) + '" class="col-sm-12 entry"><div class="col-md-8 source"><h3>' + data.objs[i].article.name + '</h3><p>' + data.objs[i].article.plainText + '</p></div><div class="col-md-4 donation text-center"><h4>' + data.objs[i].charity.name + '</h4><img src="' + data.objs[i].charity.picture + '"><a href="javascript:linkClick(' +"'" +data.objs[i].charity.link +"'"+ ')" class="btn btn-default" role="button">Donate Here</a></div></div>';
 				$('#content').append(newEntry);
 			}
 			else if(data.objs[i].article.type == "twitter"){
 				//newEntry = '<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="' + data.objs[i].article.twitterID + '"></a></blockquote>'
 				//get('https://api.twitter.com/1.1/statuses/oembed.json?id=262584296081068033',{}, function(data){console.log(data)})
-				var newEntryA = '<div id="div' + (i+1) + '" class="col-sm-12 entry"><div class="col-md-8 source"><h3>' + data.objs[i].article.name + '</h3> ';
+				var newEntryA = '<div visibility="hidden" id="div' + (i+1) + '" class="col-sm-12 entry"><div class="col-md-8 source"><h3>' + data.objs[i].article.name + '</h3> ';
 				var newEntryB = '</div><div class="col-md-4 donation text-center"><h4>' + data.objs[i].charity.name + '</h4><img src="' + data.objs[i].charity.picture + '"><a href="javascript:linkClick(' +"'" +data.objs[i].charity.link +"'"+ ')" class="btn btn-default" role="button">Donate Here</a></div></div>';
 				
 				
