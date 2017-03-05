@@ -42,10 +42,9 @@ var populateItems = function(){
 
 function linkClick(url,id){
 	console.log(url);
-
 	console.log("clicked");
 	window.location = url;
-	get('/newClick',{"id":id}, function(data){
+	post('/newClick',{"id":id}, function(data){
 			console.log("clicked")
 
 		window.location = url;
@@ -85,6 +84,23 @@ function get(domain, obj, callback) {
 		console.error("Error reading file at '" + domain + "'.");
 	});
 }
+
+
+function post(domain, obj, callback) {
+	$.ajax({
+		url: domain,
+		type: "POST",
+		data: JSON.stringify(obj),
+		cache: false,
+		dataType: "json",
+		contentType: "application/json"
+	}).done(function (data) {
+		callback(data);
+	}).fail(function () {
+		console.error("Error reading file at '" + domain + "'.");
+	});
+}
+
 
 var headerExpandChange = function(){
 	$( "#header" ).toggleClass("headerOpen");	

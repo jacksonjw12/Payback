@@ -55,34 +55,35 @@ function start() {
 		
 	});
 
-	app.get('/newClick',function(req,res){
-		console.log(req.body.data);
+	app.post('/newClick',function(req,res){
+		console.log(typeof req.body.id);
+		console.log("I WANNA CLICK PLS THANX")
 		MongoClient.connect(url, function(err, db) {	
 		 
-			
 			db.collection('payback').updateOne(
-				{ "_id" : req.body.id },
+				{ _id : req.body.id },
 				{
 					$inc: { 'clicks': 1 }
 				}, function(err, results) {
-				console.log(results);
+				//console.log(results);
 			});
 
 		});  
 		res.send({})
 	})
 
-	app.get('/newUpvote',function(req,res){
+	app.post('/newUpvote',function(req,res){
 		console.log(req.body.data);
+
 		MongoClient.connect(url, function(err, db) {	
 		 
 			
 		  	db.collection('payback').updateOne(
-				{ "_id" : req.body.id },
+				{ _id : req.body.id },
 				{
-					$inc: { 'upvotes': 1 }
+					$inc: { upvotes: 1 }
 				}, function(err, results) {
-				console.log(results);
+				//console.log(results);
 			});
 
 		});  
@@ -171,9 +172,9 @@ var findPayback = function(db, callback) {
       assert.equal(err, null);
       if (doc != null) {
       	objs.push(doc)
-         console.log(doc);
+         //console.log(doc);
       } else {
-         console.log("doc is null")
+         console.log("doc is done")
          callback(objs)
       }
 
@@ -241,7 +242,7 @@ var removePayback = function(db, callback) {
    db.collection('payback').deleteMany(
       { "name": "test" },
       function(err, results) {
-         console.log(results);
+         //console.log(results);
          callback();
       }
    );
