@@ -8,6 +8,10 @@
 	color:white;
 }
 
+h4 {
+	line-height: 35px;
+}
+
 #header {
 	border-bottom: solid 1px #eeeeee;
 	position: fixed;
