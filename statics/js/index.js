@@ -81,12 +81,11 @@ var setSortStyle = function(a){
 var sortData = function(){
 	if(sortStyle == 'newest'){
 		data.objs.sort(function(a,b){
-			console.log(b.date - a.date);
-			return b.date - a.date;
+			return Date.parse(b.date) - Date.parse(a.date);
 		});
 	}else if(sortStyle == 'oldest'){
 		data.objs.sort(function(a,b){
-			return a.date - b.date;
+			return Date.parse(a.date) - Date.parse(b.date);
 		});
 	}else if(sortStyle == 'hot'){
 		data.objs.sort(function(a,b){
@@ -94,7 +93,6 @@ var sortData = function(){
 		});
 	}
 	populateItems();
-	console.log('ey');
 	return data;
 }
 
