@@ -32,10 +32,10 @@ function start() {
 	app.get('/getDisplay',function(req,res){
 		var n = Math.floor(2*Math.random());
 		if(n == 0){
-			res.send("ANAND::false")
+			res.send("ANAND:0:false")
 		}
 		else{
-			res.send("ANAND::true")	
+			res.send("ANAND:1:true")	
 		}
 
 	})
@@ -61,7 +61,7 @@ function start() {
 		 
 			
 			db.collection('payback').updateOne(
-				{ "name" : "test" },
+				{ "_id" : req.body.data.id },
 				{
 					$inc: { 'clicks': 1 }
 				}, function(err, results) {
@@ -79,9 +79,9 @@ function start() {
 		 
 			
 		  	db.collection('payback').updateOne(
-				{ "name" : "test" },
+				{ "_id" : req.body.data.id },
 				{
-					$inc: { 'clicks': 1 }
+					$inc: { 'upvotes': 1 }
 				}, function(err, results) {
 				console.log(results);
 				callback();
