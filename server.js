@@ -56,11 +56,39 @@ function start() {
 	});
 
 	app.get('/newClick',function(req,res){
-		
+		console.log(req.body.data);
+		MongoClient.connect(url, function(err, db) {	
+		 
+			
+			db.collection('payback').updateOne(
+				{ "name" : "test" },
+				{
+					$inc: { 'clicks': 1 }
+				}, function(err, results) {
+				console.log(results);
+				callback();
+			});
+
+		});  
+		res.send({})
 	})
 
 	app.get('/newUpvote',function(req,res){
+		console.log(req.body.data);
+		MongoClient.connect(url, function(err, db) {	
+		 
+			
+		  	db.collection('payback').updateOne(
+				{ "name" : "test" },
+				{
+					$inc: { 'clicks': 1 }
+				}, function(err, results) {
+				console.log(results);
+				callback();
+			});
 
+		});  
+		res.send({})
 	})
 
 
