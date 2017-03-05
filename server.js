@@ -66,7 +66,6 @@ function start() {
 					$inc: { 'clicks': 1 }
 				}, function(err, results) {
 				console.log(results);
-				callback();
 			});
 
 		});  
@@ -84,7 +83,6 @@ function start() {
 					$inc: { 'upvotes': 1 }
 				}, function(err, results) {
 				console.log(results);
-				callback();
 			});
 
 		});  
