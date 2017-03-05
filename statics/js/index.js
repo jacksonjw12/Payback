@@ -19,6 +19,7 @@ var populateItems = function(){
 				var newEntryB = '</div><div class="col-md-4 donation text-center"><h4>' + data.objs[i].charity.name + '</h4><img src="' + data.objs[i].charity.picture + '"><a href="javascript:linkClick(' +"'" +data.objs[i].charity.link +"," + data.objs[i].id_+"'"+ ')" class="btn btn-default" role="button">Donate Here</a></div></div>';
 				
 				
+				
 				//console.log(data);
 				// $('#content').append(data.html);
 
@@ -41,14 +42,14 @@ var populateItems = function(){
 
 function linkClick(url,id){
 	console.log(url);
-	console.log(id)
-	get('/newClick',{},function(data){
-		console.log("clicked")
+
+	console.log("clicked");
+	window.location = url;
+	get('/newClick',{"id":id}, function(data){
+			console.log("clicked")
 
 		window.location = url;
 	});
-
-	
 }
 
 
