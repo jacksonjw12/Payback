@@ -30,12 +30,18 @@ function start() {
 
 	})
 	app.get('/getDisplay',function(req,res){
-		var n = Math.floor(2*Math.random());
+		var n = Math.floor(4*Math.random());
 		if(n == 0){
 			res.send("ANAND::0false%")
 		}
-		else{
-			res.send("ANAND::1true%")	
+		else if(n==1){
+			res.send("ANAND::1WHATDID YOU JUST SAY TO ME YOU LITTLE SHIT IL HAVE YOU KNOW %")	
+		}
+		else if(n==2){
+			res.send("ANAND::2 I SERVED AS A MARINE IN VIETNAME AND I SLAUGHTERED%")	
+		}
+		else if(n==3){
+			res.send("ANAND::3 LITTLE SHITES LIEK YOU ERRY DAY BOI%")	
 		}
 
 	})
