@@ -95,6 +95,8 @@
 	/*box-shadow: 5px 5px 5px #888888;*/
 	margin-bottom: 20px;
 	border-radius: 5px;
+	display: flex;            
+  	justify-content: center;
 }
 
 #div1 {
@@ -110,7 +112,9 @@
 .donation img {
 	width: 100%;
 }
-
+.inner {
+	 align-self: center;  
+}
 
 .entry .btn-default {
 	background-color: #4080a0;
