@@ -124,8 +124,13 @@ function start() {
 			cursor.each(function(err, doc) {
 				assert.equal(err, null);
 				if (doc != null) {
+					for(var i = 0; i< 100; i++){
+						console.log(i);
+					}
 					doc.date = new Date();
 					db.collection('payback').save(doc)
+					
+
 					//console.log(doc);
 				} else {
 					console.log("doc is done")
