@@ -109,6 +109,7 @@ var insertDocument = function(db,data, callback) {
    db.collection('payback').insertOne( {
       "article" : {
          "type" : data.article.type,//could also be twitter, or article or plainText
+          "name" : data.article.name,
          "twitterID" : data.article.twitterID,
          "plainText" : data.article.plainText,
          "link" : data.article.link
@@ -147,6 +148,7 @@ var findPayback = function(db, callback) {
 var testDocument =  {
       "article" : {
          "type" : "plainText",
+          "name" : "eyyy",
          "twitterID" :"0",
          "plainText" : "test",
          "link" : "http://www.jacksonwheelers.space"

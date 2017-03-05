@@ -5,7 +5,7 @@ var populateItems = function(){
 		console.log(data.objs)
 		for(var i = 0; i < data.objs.length; i++){
 			var temp = "Article Title";
-			var newEntry = '<div class="col-sm-12 entry"><div class="col-md-8 source"><h3>' + temp + '</h3><p>' + data.objs[i].article.plainText + '</p></div><div class="col-md-4 donation text-center"><h4>' + data.objs[i].charity.name + '</h4><img src="' + data.objs[i].charity.picture + '"><a href="' + data.objs[i].charity.name + '" class="btn btn-default" role="button">Donate Here</a></div></div>';
+			var newEntry = '<div class="col-sm-12 entry"><div class="col-md-8 source"><h3>' + data.objs[i].article.name + '</h3><p>' + data.objs[i].article.plainText + '</p></div><div class="col-md-4 donation text-center"><h4>' + data.objs[i].charity.name + '</h4><img src="' + data.objs[i].charity.picture + '"><a href="' + data.objs[i].charity.name + '" class="btn btn-default" role="button">Donate Here</a></div></div>';
 
 
 			$('#content').append(newEntry);
