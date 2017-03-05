@@ -38,14 +38,16 @@ $(document).on("scroll", function(){
 	}
 	else if($(document).scrollTop() == 0){
 		if($('#header').hasClass('headerMinimized')){
-			$("#header" ).toggleClass("headerMinimized");	
 			$( "#invisible_header" ).toggleClass("headerMinimized");	
 		
+			$("#header" ).toggleClass("headerMinimized");	
+			
 		}
 		if(!$('#header').hasClass('headerClosed')){
+			$( "#invisible_header" ).toggleClass("headerClosed");	
 			$( "#header" ).toggleClass("headerClosed");	
 
-			$( "#invisible_header" ).toggleClass("headerClosed");	
+			
 		
 		}
 		
