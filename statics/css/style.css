@@ -63,6 +63,7 @@
 	animation: fadeInLeft 1s;
 	padding:10px;
 }
+
 .gradient {
 	background: #4080a0;
 	background: -webkit-linear-gradient(left top, #4080a0, #d4eefc);
@@ -97,11 +98,11 @@
 	border-radius: 5px;
 }
 
-#first {
+#div1 {
 	animation: bounceInUp 1s;
 }
 
-#second {
+#div2 {
 	animation: bounceInUp 1s;
 	animation-delay: 0.1s
 }
@@ -110,11 +111,8 @@
 	width: 100%;
 }
 
-.btn-default {
-	margin-bottom: 10px;
-}
-
 .entry .btn-default {
+	margin: 10px;
 	background-color: #4080a0;
 	color: #ffffff;
 }

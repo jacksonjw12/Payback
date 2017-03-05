@@ -47,31 +47,18 @@
 	<div id="nav" class="col-md-12 text-center sorter">
 		<p>Sort by:</p>
 		<div class="btn-group">
-			<!-- <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    Latest <span class="caret"></span>
-		    </button>
-		    <ul class="dropdown-menu">
-		    	<li><a href="#">Latest</a></li>
-    			<li><a href="#">Popular</a></li>
-		    </ul> -->
-
-		    <select class="form-control " id="articleType">
-		      <option>Hot</option>
-		      <option>Newest</option>
-		      <option>Oldest</option>
-		      
+		    <select onchange="setSortStyle(this.value)" class="form-control" id="articleType">
+		    	<option value="hot">Hot</option>
+		    	<option value="newest">Newest</option>
+		    	<option value="oldest">Oldest</option>
 		    </select>
-
-
 		</div>
 	</div>
-
-
 
 	<div id="spacer" class="col-md-2"></div>
 
 	<div id="content" class="col-md-8 container">
-		<div id="first" class="col-sm-12 entry">
+		<div class="col-sm-12 entry">
 			<div class="col-md-8 source">
 				<h3>ENTRY 1</h3>
 				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
@@ -83,7 +70,7 @@
 			</div>
 		</div>
 
-		<div id="second" class="col-sm-12 entry">
+		<div class="col-sm-12 entry">
 			<div class="col-md-8 source">
 				<h3>ENTRY 1</h3>
 				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
