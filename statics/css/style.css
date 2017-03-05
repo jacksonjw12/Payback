@@ -97,11 +97,11 @@
 	border-radius: 5px;
 }
 
-#first {
+#div1 {
 	animation: bounceInUp 1s;
 }
 
-#second {
+#div2 {
 	animation: bounceInUp 1s;
 	animation-delay: 0.1s
 }
