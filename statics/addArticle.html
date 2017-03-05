@@ -43,7 +43,8 @@ var testDocument =  {
 
       },
       "clicks" : 10,
-      "upvotes" : 1
+      "upvotes" : 1,
+      "date", new Date();
 }
 
 function getFormData(){
@@ -52,6 +53,7 @@ function getFormData(){
 	doc.charity = {}
 	doc.clicks = 0;
 	doc.upvotes = 1;
+	doc.date = new Date();
 	var t = document.getElementById("articleType");
 	doc.article.type = t.options[t.selectedIndex].text;
 	doc.article.name = document.getElementById("articleName").value;

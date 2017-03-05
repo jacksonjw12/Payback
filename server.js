@@ -114,6 +114,24 @@ function start() {
 		res.send({})
 	});
 
+	/*app.get('/tempFixDates',function(req,res){
+		MongoClient.connect(url, function(err, db) {	
+		 	// db.payback.update({}, {$set: {"date": new Date()}}, false, true)
+			
+		  	db.collection('payback').update(
+				{ },
+				{
+					$set: { "date": new Date() }
+				}, function(err, results) {
+				//console.log(results);
+			});
+
+		});  
+		res.send({})
+			
+	})*/
+
+
 	/*app.get('/aboutMe', function (req, res) {
 		res.sendFile(__dirname + '/statics/aboutMe.html')
 	});
@@ -164,7 +182,8 @@ var insertDocument = function(db,data, callback) {
         "picture":data.charity.picture
       },
       "clicks" : data.clicks,
-      "upvotes" : data.upvotes
+      "upvotes" : data.upvotes,
+      "date" : data.date
    }, function(err, result) {
     assert.equal(err, null);
     console.log("Inserted a document into the payback collection.");
@@ -204,7 +223,8 @@ var testDocument =  {
 
       },
       "clicks" : 10,
-      "upvotes" : 1
+      "upvotes" : 1,
+      "date" : new Date()
 }
 MongoClient.connect(url, function(err, db) {	
   assert.equal(null, err);
