@@ -31,21 +31,23 @@ function start() {
 	})
 	app.get('/getDisplay',function(req,res){
 		
-		if(n >= 4){n = 0;}
+		res.send("ANAND::0 Hello %:1World%:2Test%:3Fuck You%")
+
+		// if(n >= 4){n = 0;}
 		
-		if(n == 0){
-			res.send("ANAND::0 Hello %")
-		}
-		else if(n==1){
-			res.send("ANAND::1 Is it me your looking for %")
-		}
-		else if(n==2){
-			res.send("ANAND::2 I can see it in your eyes%")
-		}
-		else if(n==3){
-			res.send("ANAND::3 Ryan is the literal representation of a cunt%")		
-		}
-		n++;
+		// if(n == 0){
+		// 	res.send("ANAND::0 Hello %")
+		// }
+		// else if(n==1){
+		// 	res.send("ANAND::1 Is it me your looking for %")
+		// }
+		// else if(n==2){
+		// 	res.send("ANAND::2 I can see it in your eyes%")
+		// }
+		// else if(n==3){
+		// 	res.send("ANAND::3 Ryan is the literal representation of a cunt%")		
+		// }
+		// n++;
 
 	})
 	app.get('/testReadDB',function(req,res){
