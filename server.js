@@ -178,7 +178,7 @@ MongoClient.connect(url, function(err, db) {
   	findPayback(db, function(objs) {
       db.close();
   });
-});  
+});  });  
 
 var updateUpvotes = function(db, callback) {
    db.collection('payback').updateOne(
