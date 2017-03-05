@@ -32,10 +32,10 @@ function start() {
 	app.get('/getDisplay',function(req,res){
 		var n = Math.floor(2*Math.random());
 		if(n == 0){
-			res.send("ANAND::false")
+			res.send({"value":false})
 		}
 		else{
-			res.send("ANAND::true")	
+			res.send({"value":true})	
 		}
 
 	})
@@ -198,7 +198,7 @@ var updateUpvotes = function(db, callback) {
       console.log(results);
       callback();
    });
-}
+};
 
 var updateClicks = function(db, callback) {
    db.collection('payback').updateOne(
@@ -209,7 +209,7 @@ var updateClicks = function(db, callback) {
       console.log(results);
       callback();
    });
-}
+};
 
 var removePayback = function(db, callback) {
    db.collection('payback').deleteMany(
@@ -218,5 +218,30 @@ var removePayback = function(db, callback) {
          console.log(results);
          callback();
       }
-   )
-}
+   );
+};
+
+
+var sortUpvotes = function(db, callback) {
+   var cursor =db.collection('payback').find().sort( { "upvotes": 1, "name": 1 } );
+   cursor.each(function(err, doc) {
+      assert.equal(err, null);
+      if (doc != null) {
+         console.dir(doc);
+      } else {
+         callback();
+      }
+   });
+};
+
+var sortClicks = function(db, callback) {
+   var cursor =db.collection('payback').find().sort( { "clicks": 1, "name": 1 } );
+   cursor.each(function(err, doc) {
+      assert.equal(err, null);
+      if (doc != null) {
+         console.dir(doc);
+      } else {
+         callback();
+      }
+   });
+};
