@@ -30,9 +30,24 @@ function start() {
 
 	})
 	app.get('/getDisplay',function(req,res){
+		MongoClient.connect(url, function(err, db) {	
+		 
+			
+		  	findPayback(db, function(objs) {
+		  		
+
+		  		res.send("ANAND::0 " + objs[n].article.name +  " %:1"+ objs[n].article.plainText+"%:2"+objs[n].upvotes +"%:3"+objs[n].clicks+"%")
+		  		n++;
+		  		if(n >= objs.length){
+		  			n = 0;
+		  		}
+
+
+		      	db.close();
+		 	});
+		});  
 		
 		
-		res.send("ANAND::0 Hello %:1World%:2Test%:3Fuck You%")
 
 		// if(n >= 4){n = 0;}
 		
