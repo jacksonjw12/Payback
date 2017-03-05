@@ -36,7 +36,7 @@ function start() {
 			
 			  	findPayback(db, function(objs) {
 			  		
-			  		var mID = objs[req.param('id')]
+			  		var mID = objs[req.param('id')]._id;
 					db.collection('payback').update(
 						{"_id":mID},
 						{
