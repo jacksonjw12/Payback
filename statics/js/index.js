@@ -4,7 +4,8 @@ var populateItems = function(){
 	get('/testReadDB',{},function(data){
 		console.log(data.objs)
 		for(var i = 0; i < data.objs.length; i++){
-			var newEntry = '<div class="col-sm-12 entry"><div class="col-md-8 source"><h3>' + data.objs[i].article.plainText + '</h3><p></p></div><div class="col-md-4 donation text-center"><h4></h4><img><button type="button" class="btn btn-default">Donate Here</button></div></div>';
+			var temp = "Article Title";
+			var newEntry = '<div class="col-sm-12 entry"><div class="col-md-8 source"><h3>' + temp + '</h3><p>' + data.objs[i].article.plainText + '</p></div><div class="col-md-4 donation text-center"><h4>' + data.objs[i].charity.name + '</h4><img src="' + data.objs[i].charity.picture + '"><a href="' + data.objs[i].charity.name + '" class="btn btn-default" role="button">Donate Here</a></div></div>';
 
 
 			$('#content').append(newEntry);
