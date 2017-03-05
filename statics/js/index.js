@@ -73,14 +73,12 @@ function linkClick(url,id){
 	});
 }
 
-
 var setSortStyle = function(a){
 	sortStyle = a;
-	console.log(sortStyle);
-	sortData(data);
+	sortData();
 }
 
-var sortData = function(data_blegh){
+var sortData = function(){
 	if(sortStyle == 'newest'){
 		// SORT BY NEWEST
 		console.log('newest sort');
@@ -88,11 +86,9 @@ var sortData = function(data_blegh){
 		data.objs.reverse();
 		console.log('oldest sort');
 	}else if(sortStyle == 'hot'){
-		// SORT BY MOST CLICKS
 		data.objs.sort(function(a,b){
 			return b.clicks - a.clicks;
 		});
-		console.log('hot sort');
 	}
 	populateItems();
 	console.log('ey');
