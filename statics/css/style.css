@@ -16,8 +16,6 @@
   	transition: all .7s cubic-bezier(0.42,0,0.58,1);
   	overflow-y:hidden;
   	animation: fadeInLeft 1s;
-
-
 	/*250 px is default height*/
 }
 
@@ -47,6 +45,10 @@
 .headerMinimized {
 	height:150px;
 	margin-top:-30px;
+}
+
+.btn-link {
+	margin-bottom: 20px;
 }
 
 .gradient {
@@ -87,14 +89,6 @@
 	animation: bounceInUp 1s;
 	animation-delay: 0.1s
 }
-
-/*.source {
-	background-color: blue;
-}
-
-.donation {
-	background-color: red;
-}*/
 
 .donation img {
 	width: 100%;
