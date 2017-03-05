@@ -61,7 +61,7 @@ function start() {
 		 
 			
 			db.collection('payback').updateOne(
-				{ "_id" : req.body.data.id },
+				{ "_id" : req.body.id },
 				{
 					$inc: { 'clicks': 1 }
 				}, function(err, results) {
@@ -79,7 +79,7 @@ function start() {
 		 
 			
 		  	db.collection('payback').updateOne(
-				{ "_id" : req.body.data.id },
+				{ "_id" : req.body.id },
 				{
 					$inc: { 'upvotes': 1 }
 				}, function(err, results) {
