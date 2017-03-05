@@ -25,12 +25,12 @@ function start() {
 		res.sendFile(__dirname + '/statics/index.html')
 	});
 	app.get('/getData',function(req,res){
-
+		console.log(req.param('id'))
 		res.send({"hello":"world"})
 
 	})
 	app.get('/getDisplay',function(req,res){
-		console.log(req.param('id'))
+		
 		
 		res.send("ANAND::0 Hello %:1World%:2Test%:3Fuck You%")
 
