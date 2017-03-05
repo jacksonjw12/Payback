@@ -178,7 +178,7 @@ MongoClient.connect(url, function(err, db) {
   	findPayback(db, function(objs) {
       db.close();
   });
-});  });  
+});  
 
 var updateUpvotes = function(db, callback) {
    db.collection('payback').updateOne(
@@ -189,7 +189,7 @@ var updateUpvotes = function(db, callback) {
       console.log(results);
       callback();
    });
-};
+}
 
 var updateClicks = function(db, callback) {
    db.collection('payback').updateOne(
@@ -200,7 +200,7 @@ var updateClicks = function(db, callback) {
       console.log(results);
       callback();
    });
-};
+}
 
 var removePayback = function(db, callback) {
    db.collection('payback').deleteMany(
@@ -209,5 +209,5 @@ var removePayback = function(db, callback) {
          console.log(results);
          callback();
       }
-   );
-};
+   )
+}
