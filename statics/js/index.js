@@ -80,11 +80,13 @@ var setSortStyle = function(a){
 
 var sortData = function(){
 	if(sortStyle == 'newest'){
-		// SORT BY NEWEST
-		console.log('newest sort');
+		data.objs.sort(function(a,b){
+			return b.date - a.date;
+		});
 	}else if(sortStyle == 'oldest'){
-		data.objs.reverse();
-		console.log('oldest sort');
+		data.objs.sort(function(a,b){
+			return a.date - b.date;
+		});
 	}else if(sortStyle == 'hot'){
 		data.objs.sort(function(a,b){
 			return b.clicks - a.clicks;
