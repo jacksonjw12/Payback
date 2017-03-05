@@ -52,10 +52,10 @@ var setSortStyle = function(a){
 }
 
 var sortData = function(data){
-	if(sortStyle == hot){
+	if(sortStyle == 'hot'){
 		return data;
 		console.log('hot')
-	}else if(sortStyle == newest){
+	}else if(sortStyle == 'newest'){
 		return data;
 		console.log('newest');
 	}
