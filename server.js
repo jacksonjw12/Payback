@@ -31,10 +31,10 @@ function start() {
 	})
 	app.get('/getDisplay',function(req,res){
 		var n = Math.floor(4*Math.random());
-		res.send("ANAND::0false%")
-		res.send("ANAND::1WHATDID YOU JUST SAY TO ME YOU LITTLE SHIT IL HAVE YOU KNOW %")
-		res.send("ANAND::2 I SERVED AS A MARINE IN VIETNAME AND I SLAUGHTERED%")
-		res.send("ANAND::3 LITTLE SHITES LIEK YOU ERRY DAY BOI%")		
+		res.send("ANAND::0 Hello %")
+		res.send("ANAND::1 Is it me your looking for %")
+		res.send("ANAND::2 I can see it in your eyes%")
+		res.send("ANAND::3 Ryan is the literal representation of a cunt%")		
 		/*if(n == 0){
 			res.send("ANAND::0false%")
 		}
