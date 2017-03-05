@@ -51,9 +51,9 @@ function start() {
 			      	db.close();
 			 	});
 			});  
-			res.send({})
+			
 		}
-		else{
+		
 			MongoClient.connect(url, function(err, db) {	
 		 
 			
@@ -68,7 +68,7 @@ function start() {
 			 	});
 			});  
 		
-		}
+		
 		
 		
 
