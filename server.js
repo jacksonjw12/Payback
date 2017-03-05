@@ -1,6 +1,13 @@
 var http = require("http");
 var url = require("url");
 var request = require("request");
+
+
+
+var MongoClient = require('mongodb').MongoClient;
+var assert = require('assert');
+var url = 'mongodb://payback:casa@jacksonwheelers.space/payback?authSource=admin';
+
 function start() {
 
 	var express = require('express');
@@ -29,6 +36,16 @@ function start() {
 		}
 
 	})
+	app.get('/testReadDB',function(req,res){
+		MongoClient.connect(url, function(err, db) {	
+		 
+			
+		  	findPayback(db, function(objs) {
+		  		res.send({"objs":objs})
+		      	db.close();
+		 	});
+		});  
+	})	
 
 	/*app.get('/aboutMe', function (req, res) {
 		res.sendFile(__dirname + '/statics/aboutMe.html')
@@ -63,9 +80,7 @@ function start() {
 
 exports.start = start;
 
-var MongoClient = require('mongodb').MongoClient;
-var assert = require('assert');
-var url = 'mongodb://payback:casa@jacksonwheelers.space/payback?authSource=admin';
+
 
 var insertDocument = function(db, callback) {
    db.collection('payback').insertOne( {
@@ -109,10 +124,11 @@ var findPayback = function(db, callback) {
          console.log(doc);
       } else {
          console.log("doc is null")
+         callback(objs)
       }
 
    });
-   callback(objs)
+   
 };
 
 MongoClient.connect(url, function(err, db) {	
@@ -126,7 +142,7 @@ MongoClient.connect(url, function(err, db) {
 	insertDocument(db, function() {
       db.close();
   	});
-  	findPayback(db, function() {
+  	findPayback(db, function(objs) {
       db.close();
   });
 });  
