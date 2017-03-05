@@ -1,0 +1,136 @@
+<html>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+#formContainer {
+	margin:30px;
+	width:50%;
+}
+
+
+
+
+.bs-callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+}
+.bs-callout-default {
+    border-left-color: #777;
+}
+
+</style>
+
+<script>
+
+var testDocument =  {
+      "article" : {
+         "type" : "plainText",
+         "twitterID" :"0",
+         "plainText" : "test",
+         "link" : "http://www.jacksonwheelers.space"
+      },
+      "charity" : {
+        "name" : "the human fund",
+        "link" : "http://festivusweb.com/festivus-the-human-fund.htm",
+        "picture":"http://i.imgur.com/XdkPivg.jpg"
+
+      },
+      "clicks" : 10,
+      "upvotes" : 1
+}
+
+function getFormData(){
+	var doc = {}
+	doc.article = {}
+	doc.charity = {}
+	doc.clicks = 0;
+	doc.upvotes = 1;
+	var t = document.getElementById("articleType");
+	doc.article.type = t.options[t.selectedIndex].text;
+	doc.article.twitterID = document.getElementById("articleTwitter").value;
+	doc.article.plainText = document.getElementById("articlePlaintext").value;
+	doc.article.link = document.getElementById("articleLink").value;
+	doc.charity.name = document.getElementById("charityName").value;
+	doc.charity.link = document.getElementById("charityLink").value;
+	doc.charity.pictures = document.getElementById("charityPicture").value;
+	console.log(doc);
+
+	post('/addDocument',{"data":doc},function(){console.log("submitted")})
+
+}
+
+
+function post(domain, obj, callback) {
+	$.ajax({
+		url: domain,
+		type: "POST",
+		data: JSON.stringify(obj),
+		cache: false,
+		dataType: "json",
+		contentType: "application/json"
+	}).done(function (data) {
+		callback(data);
+	}).fail(function () {
+		console.error("Error reading file at '" + domain + "'.");
+	});
+}
+
+
+</script>
+
+<body>
+
+<div id="formContainer">
+<form>
+  <p class="h1">Article</p>
+  <div class="form-group">
+  	<label for="exampleSelect1">Article Type</label>
+    <select class="form-control" id="articleType">
+      <option>plaintext</option>
+      <option>twitter</option>
+      <option>article</option>
+      
+    </select>
+    <div class="bs-callout bs-callout-primary">
+
+	    <label for="exampleInputPassword1">Twitter ID (used only for twitter type)</label>
+	    <input type="text" class="form-control" id="articleTwitter" placeholder="twitter">
+	    <label for="exampleInputPassword1">PlainText (used in article + plaintext type)</label>
+	    <input type="text" class="form-control" id="articlePlaintext" placeholder="text">
+	    <label for="exampleInputPassword1">Article page (used only in article)</label>
+	    <input type="text" class="form-control" id="articleLink" placeholder="article">
+    </div>
+
+
+    <label for="exampleSelect1">Charity</label>
+    
+    <div class="bs-callout bs-callout-primary">
+
+	    <label for="exampleInputPassword1">Webpage</label>
+	    <input type="text" class="form-control" id="charityLink" placeholder="Webpage">
+	    <label for="exampleInputPassword1">Name</label>
+	    <input type="text" class="form-control" id="charityName" placeholder="Name">
+	    <label for="exampleInputPassword1">Picture</label>
+	    <input type="text" class="form-control" id="charityPicture" placeholder="Picture">
+    </div>
+     
+    </div>
+
+  </div>
+  
+  <button onclick="javascript:getFormData()" type="button" style="position:absolute;top:50%;left:60%"class="btn btn-primary">Submit</button>
+  
+</form>
+</div>
+
+</body>
+
+
+</html>

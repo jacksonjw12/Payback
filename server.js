@@ -13,8 +13,11 @@ function start() {
 	var express = require('express');
 	app = express();
 	var bodyParser = require('body-parser')
-	var mongodb
 	
+	app.use(bodyParser.json());
+	app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+	  extended: true
+	})); 
 
 	app.use(express.static(__dirname + '/statics'));
 
@@ -46,6 +49,26 @@ function start() {
 		 	});
 		});  
 	})	
+
+	app.get('/addArticles',function(req,res){
+		res.sendFile(__dirname + '/statics/addArticle.html')
+		
+	});
+
+
+
+	app.post('/addDocument',function(req,res){
+		console.log(req.body.data);
+		MongoClient.connect(url, function(err, db) {	
+		 
+			
+		  	insertDocument(db,req.body.data, function() {
+		      db.close();
+		  	});
+
+		});  
+		res.send({})
+	});
 
 	/*app.get('/aboutMe', function (req, res) {
 		res.sendFile(__dirname + '/statics/aboutMe.html')
@@ -92,7 +115,8 @@ var insertDocument = function(db,data, callback) {
       },
       "charity" : {
         "name" : data.charity.name,
-        "link" : data.charity.link
+        "link" : data.charity.link,
+        "picture":data.charity.picture
       },
       "clicks" : data.clicks,
       "upvotes" : data.upvotes
@@ -129,7 +153,9 @@ var testDocument =  {
       },
       "charity" : {
         "name" : "the human fund",
-        "link" : "http://festivusweb.com/festivus-the-human-fund.htm"
+        "link" : "http://festivusweb.com/festivus-the-human-fund.htm",
+        "picture":"http://i.imgur.com/XdkPivg.jpg"
+
       },
       "clicks" : 10,
       "upvotes" : 1
