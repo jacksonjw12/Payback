@@ -5,8 +5,8 @@ var populateItems = function(){
 		console.log(data.objs)
 		for(var i = 0; i < data.objs.length; i++){
 			var temp = "Article Title";
-			if(data.objs[i].article.type == "plainText"){
-				var newEntry = '<div class="col-sm-12 entry"><div class="col-md-8 source"><h3>' + data.objs[i].article.name + '</h3><p>' + data.objs[i].article.plainText + '</p></div><div class="col-md-4 donation text-center"><h4>' + data.objs[i].charity.name + '</h4><img src="' + data.objs[i].charity.picture + '"><a href="' + data.objs[i].charity.link + '" class="btn btn-default" role="button">Donate Here</a></div></div>';
+			if(data.objs[i].article.type == "plaintext"){
+				var newEntry = '<div class="col-sm-12 entry"><div class="col-md-8 source"><h3>' + data.objs[i].article.name + '</h3><p>' + data.objs[i].article.plainText + '</p></div><div class="col-md-4 donation text-center"><h4>' + data.objs[i].charity.name + '</h4><img src="' + data.objs[i].charity.picture + '"><a href="javascript:linkClick(' +"'" +data.objs[i].charity.link +"'"+ ')" class="btn btn-default" role="button">Donate Here</a></div></div>';
 				$('#content').append(newEntry);
 				
 			}
@@ -14,7 +14,7 @@ var populateItems = function(){
 				//newEntry = '<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="' + data.objs[i].article.twitterID + '"></a></blockquote>'
 				//get('https://api.twitter.com/1.1/statuses/oembed.json?id=262584296081068033',{}, function(data){console.log(data)})
 				var newEntryA = '<div class="col-sm-12 entry"><div class="col-md-8 source"><h3>' + data.objs[i].article.name + '</h3> ';
-				var newEntryB = '</div><div class="col-md-4 donation text-center"><h4>' + data.objs[i].charity.name + '</h4><img src="' + data.objs[i].charity.picture + '"><a href="' + data.objs[i].charity.link + '" class="btn btn-default" role="button">Donate Here</a></div></div>';
+				var newEntryB = '</div><div class="col-md-4 donation text-center"><h4>' + data.objs[i].charity.name + '</h4><img src="' + data.objs[i].charity.picture + '"><a href="javascript:linkClick(' +"'" +data.objs[i].charity.link +"'"+ ')" class="btn btn-default" role="button">Donate Here</a></div></div>';
 				
 				//console.log(data);
 				// $('#content').append(data.html);
@@ -26,39 +26,24 @@ var populateItems = function(){
 				twttr.widgets.createTweet(
 				  data.objs[i].article.twitterID,
 				  document.getElementById( i+data.objs[i].article.twitterID),
-				  {}
-				  
+				  {}  
 				);
 				
 
 			}	
 
 
-			
-
 		}
 
 	});
 
 }
-
-
-
-
-
-
 populateItems();
 
-
-
-function getTweet(link, callback){
-	$.ajax({
-		url: "https://publish.twitter.com/oembed?url="+link,
-		type: "GET",
-		dataType: "jsonp",
-		contentType: "application/json",
-		success: function(data){callback(data)}
-	});
+function linkClick(url){
+	console.log(url);
+	console.log("clicked")
+	window.location = url
 }
 
 function get(domain, obj, callback) {

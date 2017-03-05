@@ -56,7 +56,7 @@ function start() {
 	});
 
 	app.get('/newClick',function(req,res){
-
+		
 	})
 
 	app.get('/newUpvote',function(req,res){
