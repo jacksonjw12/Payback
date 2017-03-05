@@ -48,11 +48,12 @@ var headerExpandChange = function(){
 
 	$( "#header" ).toggleClass("headerOpen");	
 	$( "#header" ).toggleClass("headerClosed");	
-	if($("#headerExpandButton").html() == "V Learn More V"){
-		$("#headerExpandButton").text("> Learn More <")
+
+	if($("#headerExpandButton").html() == "Close"){
+		$("#headerExpandButton").text("Learn More >")
 	}
 	else{
-		$("#headerExpandButton").text("V Learn More V")
+		$("#headerExpandButton").text("Close")
 
 	}
 	$( "#invisible_header" ).toggleClass("headerOpen");	
