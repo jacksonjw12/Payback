@@ -39,10 +39,15 @@ var populateItems = function(){
 	});
 }
 
-function linkClick(url){
+function linkClick(url,id){
 	console.log(url);
-	console.log("clicked")
-	window.location = url
+	get('/newClick',{"id":id}, function(data){
+			console.log("clicked")
+
+		window.location = url;
+	});
+
+	
 }
 
 
