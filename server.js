@@ -201,3 +201,13 @@ var updateClicks = function(db, callback) {
       callback();
    });
 };
+
+var removePayback = function(db, callback) {
+   db.collection('payback').deleteMany(
+      { "name": "test" },
+      function(err, results) {
+         console.log(results);
+         callback();
+      }
+   );
+};
