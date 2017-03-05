@@ -43,11 +43,11 @@ var populateItems = function(){
 function linkClick(url,id){
 	console.log(url);
 	console.log("clicked");
-	window.location = url;
+	//window.location = url;
 	post('/newClick',{"id":id}, function(data){
-			console.log("clicked")
+		console.log("clicked")
 
-		window.location = url;
+		//window.location = url;
 	});
 }
 

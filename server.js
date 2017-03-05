@@ -1,7 +1,7 @@
 var http = require("http");
 var url = require("url");
 var request = require("request");
-
+ObjectId = require('mongodb').ObjectID;
 
 
 var MongoClient = require('mongodb').MongoClient;
@@ -32,10 +32,10 @@ function start() {
 	app.get('/getDisplay',function(req,res){
 		var n = Math.floor(2*Math.random());
 		if(n == 0){
-			res.send("ANAND:0:false")
+			res.send("ANAND::0false%")
 		}
 		else{
-			res.send("ANAND:1:true")	
+			res.send("ANAND::1true%")	
 		}
 
 	})
@@ -56,16 +56,15 @@ function start() {
 	});
 
 	app.post('/newClick',function(req,res){
-		console.log(typeof req.body.id);
-		console.log("I WANNA CLICK PLS THANX")
 		MongoClient.connect(url, function(err, db) {	
-		 
-			db.collection('payback').updateOne(
-				{ _id : req.body.id },
+		 	console.log(req.body.id)
+		 	var mID = ObjectId(req.body.id);
+			db.collection('payback').update(
+				{"_id":mID},
 				{
-					$inc: { 'clicks': 1 }
+					$inc: { "clicks": 1 }
 				}, function(err, results) {
-				//console.log(results);
+				console.log(results);
 			});
 
 		});  
