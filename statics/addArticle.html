@@ -59,7 +59,7 @@ function getFormData(){
 	doc.article.link = document.getElementById("articleLink").value;
 	doc.charity.name = document.getElementById("charityName").value;
 	doc.charity.link = document.getElementById("charityLink").value;
-	doc.charity.pictures = document.getElementById("charityPicture").value;
+	doc.charity.picture = document.getElementById("charityPicture").value;
 	console.log(doc);
 
 	post('/addDocument',{"data":doc},function(){console.log("submitted")})
