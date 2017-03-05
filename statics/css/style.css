@@ -97,17 +97,6 @@
 	border-radius: 5px;
 }
 
-/*.entry .source {
-	display: flex;
-	justify-content: center;
-	align-items:center;
-	overflow: hidden;
-}
-
-.entry .source p {
-	text-align: center;
-}*/
-
 #div1 {
 	animation: bounceInUp 1s;
 	animation-delay: 0s;
