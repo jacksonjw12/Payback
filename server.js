@@ -30,6 +30,7 @@ function start() {
 
 	})
 	app.get('/getDisplay',function(req,res){
+		console.log(req.param('id'))
 		
 		res.send("ANAND::0 Hello %:1World%:2Test%:3Fuck You%")
 
