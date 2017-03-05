@@ -99,11 +99,12 @@
 
 #div1 {
 	animation: bounceInUp 1s;
+	animation-delay: 0.25s;
 }
 
 #div2 {
 	animation: bounceInUp 1s;
-	animation-delay: 0.1s
+	animation-delay: 0.5s;
 }
 
 .donation img {
