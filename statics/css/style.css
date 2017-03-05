@@ -17,10 +17,12 @@
   	overflow-y:hidden;
   	animation: fadeInLeft 1s;
 
+
 	/*250 px is default height*/
 }
 
 #headerExpandedContent {
+	margin-bottom: :-2px;	
 	background-color: rgba(170,170,170,0.5);
 	/*padding: 0px 50px;*/
 }
@@ -39,7 +41,7 @@
 }
 
 .headerOpen {
-	height:400px;	
+	height:410px;	
 	
 }
 .headerMinimized {
