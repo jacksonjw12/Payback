@@ -2,8 +2,8 @@ var data = [];
 var sortStyle = 'newest';
 
 var populateItemsFirst = function(){
-	get('/testReadDB',{},function(dataI){
-		data = dataI;
+	get('/testReadDB',{},function(dataImport){
+		data = dataImport;
 		for(var i = 0; i < data.objs.length; i++){
 			var temp = "Article Title";
 			if(data.objs[i].article.type == "plaintext"){
@@ -80,15 +80,18 @@ var setSortStyle = function(a){
 	sortData(data);
 }
 
-var sortData = function(data){
+var sortData = function(data_blegh){
 	if(sortStyle == 'newest'){
 		// SORT BY NEWEST
 		console.log('newest sort');
 	}else if(sortStyle == 'oldest'){
-		data = data.reverse()
+		data.objs.reverse();
 		console.log('oldest sort');
 	}else if(sortStyle == 'hot'){
 		// SORT BY MOST CLICKS
+		data.objs.sort(function(a,b){
+			return b.clicks - a.clicks;
+		});
 		console.log('hot sort');
 	}
 	populateItems();
