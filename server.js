@@ -30,6 +30,29 @@ function start() {
 
 	})
 	app.get('/getDisplay',function(req,res){
+		if(req.param('id') != undefined){
+			MongoClient.connect(url, function(err, db) {	
+		 
+			
+			  	findPayback(db, function(objs) {
+			  		
+			  		var mID = objs[req.param('id')]
+					db.collection('payback').update(
+						{"_id":mID},
+						{
+							$inc: { "clicks": 1 }
+						}, function(err, results) {
+						console.log(results);
+					});
+			  		//res.send("ANAND::0 " + objs[n].article.name +  "  " +objs[n].clicks+ "%:1" + objs[n+1].article.name +  "  " +objs[n+1].clicks+ "%:2" + objs[n+2].article.name +  "  " +objs[n+2].clicks+ "%:3" + objs[n+3].article.name +  "  " +objs[n+3].clicks+ "%")
+			  		
+
+
+			      	db.close();
+			 	});
+			});  
+			res.send({})
+		}
 		MongoClient.connect(url, function(err, db) {	
 		 
 			
