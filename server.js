@@ -251,7 +251,7 @@ var removePayback = function(db, callback) {
 
 
 var sortUpvotes = function(db, callback) {
-   var cursor =db.collection('payback').find().sort( { "upvotes": 1, "name": 1 } );
+   var cursor =db.collection('payback').find().sort( { "upvotes": -1, "name": 1 } );
    cursor.each(function(err, doc) {
       assert.equal(err, null);
       if (doc != null) {
@@ -263,7 +263,7 @@ var sortUpvotes = function(db, callback) {
 };
 
 var sortClicks = function(db, callback) {
-   var cursor =db.collection('payback').find().sort( { "clicks": 1, "name": 1 } );
+   var cursor =db.collection('payback').find().sort( { "clicks": -1, "name": 1 } );
    cursor.each(function(err, doc) {
       assert.equal(err, null);
       if (doc != null) {
