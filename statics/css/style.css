@@ -59,6 +59,10 @@
 	margin-bottom: 20px;
 }
 
+.sorter {
+	animation: fadeInLeft 1s;
+	padding:10px;
+}
 .gradient {
 	background: #4080a0;
 	background: -webkit-linear-gradient(left top, #4080a0, #d4eefc);
