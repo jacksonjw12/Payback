@@ -7,7 +7,7 @@ ObjectId = require('mongodb').ObjectID;
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 var url = 'mongodb://payback:casa@jacksonwheelers.space/payback?authSource=admin';
-
+var n = 0;
 function start() {
 
 	var express = require('express');
@@ -30,23 +30,22 @@ function start() {
 
 	})
 	app.get('/getDisplay',function(req,res){
-		var n = Math.floor(4*Math.random());
-		res.send("ANAND::0 Hello %")
-		res.send("ANAND::1 Is it me your looking for %")
-		res.send("ANAND::2 I can see it in your eyes%")
-		res.send("ANAND::3 Ryan is the literal representation of a cunt%")		
-		/*if(n == 0){
-			res.send("ANAND::0false%")
+		
+		if(n >= 4){n = 0;}
+		
+		if(n == 0){
+			res.send("ANAND::0 Hello %")
 		}
 		else if(n==1){
-			res.send("ANAND::1WHATDID YOU JUST SAY TO ME YOU LITTLE SHIT IL HAVE YOU KNOW %")	
+			res.send("ANAND::1 Is it me your looking for %")
 		}
 		else if(n==2){
-			res.send("ANAND::2 I SERVED AS A MARINE IN VIETNAME AND I SLAUGHTERED%")	
+			res.send("ANAND::2 I can see it in your eyes%")
 		}
 		else if(n==3){
-			res.send("ANAND::3 LITTLE SHITES LIEK YOU ERRY DAY BOI%")	
-		}*/
+			res.send("ANAND::3 Ryan is the literal representation of a cunt%")		
+		}
+		n++;
 
 	})
 	app.get('/testReadDB',function(req,res){
