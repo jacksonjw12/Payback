@@ -1,5 +1,5 @@
 var data = [];
-var sortStyle = 'newest';
+var sortStyle = 'hot';
 
 var populateItemsFirst = function(){
 	get('/testReadDB',{},function(dataImport){
@@ -66,8 +66,8 @@ var populateItems = function(){
 			);
 		}	
 		else if(data.objs[i].article.type == "article"){
-			var newEntry = '<div id="div' + (i+1) +'" class="col-sm-12 entry"><div class="col-md-8 source "><h3>' + data.objs[i].article.name + '</h3></br><p class="inner">' + data.objs[i].article.plainText + '</p></div><div class="col-md-4 donation text-center"><h4>' + data.objs[i].charity.name + '</h4><img src="' + data.objs[i].charity.picture + '"><a href="javascript:linkClick(' +"'" +data.objs[i].charity.link +"','" + data.objs[i]._id+"'"+ ')" class="btn btn-default" role="button">Donate Here</a></div></div>';
-			newEntry+= '<a href="' + data.objs[i].article.link + '"<h3> Go to Article </h3><a>'
+			var newEntry = '<div id="div' + (i+1) +'" class="col-sm-12 entry"><div class="col-md-8 source "><h3>' + data.objs[i].article.name + '</h3></br><p class="inner">' + data.objs[i].article.plainText + '</p>' + '<a href="' + data.objs[i].article.link + '"<h3> Go to Article </h3><a>'+'</div><div class="col-md-4 donation text-center"><h4>' + data.objs[i].charity.name + '</h4><img src="' + data.objs[i].charity.picture + '"><a href="javascript:linkClick(' +"'" +data.objs[i].charity.link +"','" + data.objs[i]._id+"'"+ ')" class="btn btn-default" role="button">Donate Here</a></div> </div>';
+			newEntry+= 
 
 			$('#content').append(newEntry);
 		}
