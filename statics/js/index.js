@@ -81,6 +81,7 @@ var setSortStyle = function(a){
 var sortData = function(){
 	if(sortStyle == 'newest'){
 		data.objs.sort(function(a,b){
+			console.log(b.date - a.date);
 			return b.date - a.date;
 		});
 	}else if(sortStyle == 'oldest'){
