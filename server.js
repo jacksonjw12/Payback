@@ -37,10 +37,7 @@ function start() {
 		  		
 
 		  		res.send("ANAND::0 " + objs[n].article.name +  "  " +objs[n].clicks+ "%:1" + objs[n+1].article.name +  "  " +objs[n+1].clicks+ "%:2" + objs[n+2].article.name +  "  " +objs[n+2].clicks+ "%:3"+ + objs[n+3].article.name +  "  " +objs[n+3].clicks+"%")
-		  		n++;
-		  		if(n >= objs.length){
-		  			n = 0;
-		  		}
+		  		
 
 
 		      	db.close();
